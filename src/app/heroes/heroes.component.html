@@ -4,3 +4,9 @@
 <span>{{hero.id | number}}</span>
 
 <div><label for=""><input [(ngModel)]="hero.name" type="text"></label></div>
+
+<ul class="heroes">
+  <li *ngFor="let item of heroes">
+    <span class="badge">{{item.id}}</span> {{item.name}}
+  </li>
+</ul>
