@@ -15,11 +15,12 @@ export class HeroesComponent implements OnInit {
     name: 'Winstorm'
   };
 
-  // 서비스를 생성자로 주입받는다.
+  // 2. 서비스를 생성자로 주입받는다.
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+        .subscribe(data => this.heroes = data);
   }
 
 }
